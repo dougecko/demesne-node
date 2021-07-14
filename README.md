@@ -49,13 +49,13 @@ Serverless: Stack update finished...
 Service Information
 service: aws-node-rest-api
 stage: dev
-region: us-east-1
+region: ap-southeast-2
 stack: aws-node-rest-api-dev
 resources: 12
 api keys:
   None
 endpoints:
-  ANY - https://xxxxxxx.execute-api.us-east-1.amazonaws.com/dev/
+  ANY - https://xxxxxxx.execute-api.ap-southeast-2.amazonaws.com/dev/
 functions:
   api: aws-node-rest-api-dev-hello
 layers:
@@ -69,7 +69,7 @@ _Note_: In current form, after deployment, your API is public and can be invoked
 After successful deployment, you can call the created application via HTTP:
 
 ```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/dev/
+curl https://xxxxxxx.execute-api.ap-southeast-2.amazonaws.com/dev/
 ```
 
 Which should result in response similar to the following (removed `input` content for brevity):
