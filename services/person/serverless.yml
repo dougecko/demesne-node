@@ -1,0 +1,27 @@
+org: blackgecko
+app: demesne
+service: person
+
+projectDir: ../../
+
+frameworkVersion: "${file(../../serverless.common.yml):frameworkVersion}"
+
+provider:
+  name: ${file(../../serverless.common.yml):provider.name}
+  runtime: ${file(../../serverless.common.yml):provider.runtime}
+  lambdaHashingVersion: ${file(../../serverless.common.yml):provider.lambdaHashingVersion}
+  region: ap-southeast-2
+
+functions:
+  person:
+    handler: handler.person
+    events:
+      - http:
+          path: /person
+          method: get
+          cors: true
+
+# Create our resources with separate CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(../../resources/api-gateway-errors.yml)}
